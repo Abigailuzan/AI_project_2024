@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-
+import os
 
 def take_user_photo():
     cap = cv2.VideoCapture(0)
