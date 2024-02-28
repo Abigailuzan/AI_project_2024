@@ -7,7 +7,7 @@ import cv2
 #VIDEOS_DIR = os.path.join('.', 'videos')
 
 #video_path = os.path.join(VIDEOS_DIR, 'alpaca1.mp4')
-video_path='French_fries.mp4'
+video_path='French_fries1.mp4'
 video_path_out = '{}_out.mp4'.format(video_path)
 
 cap = cv2.VideoCapture(video_path)
