@@ -1,7 +1,7 @@
 import cv2
 from ultralytics import YOLO
 
-image_path = 'תמונות מקוריות/img_13.png'
+image_path = 'Original pictures/img_13.png'
 image = cv2.imread(image_path)
 # Load a pretrained model
 model = YOLO('best.pt')
