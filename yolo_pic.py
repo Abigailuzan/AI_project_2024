@@ -2,7 +2,7 @@ import cv2
 
 from ultralytics import YOLO
 # הנתיב לתמונה שעליה לבצע את הזיהוי
-image_path = r'pic\friedchicken-rice.jpg'  # Change this to the path of your image
+image_path = '11.jpg'  # Change this to the path of your image
 image_path_out = '{}_out.jpg'.format(image_path)
 
 # טעינת התמונה
@@ -10,7 +10,7 @@ image = cv2.imread(image_path)
 # Resize the image to 640x640 pixels
 image_resized = cv2.resize(image, (640, 640))
 # הנתיב לקובץ המודל של YOLO
-model_path ='bestFoodTaste.pt'
+model_path ='best.pt'
 # טעינת המודל
 model = YOLO(model_path)  # טעינת מודל מותאם אישית
 
