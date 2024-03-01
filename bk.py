@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 
 # Load a pretrained model
-model = YOLO('best.pt')
+model = YOLO('models/best.pt')
 
 # Run Inference on the source
 results = model(source='A_ripe_pineapple_sitting_on_a_wooden_table_with_a_.jpg', show=True, conf=0.35, save=True) # generator of Results objects
@@ -52,4 +52,4 @@ image_path = 'A_realistic_photo_of_an_apple_inside_a_fruit_bowl,.jpg'
 output_dir = 'after8_1.jpg'
 label_file_path = create_yolo_label(image_path, output_dir)
 
-label_file_path
+#label_file_path

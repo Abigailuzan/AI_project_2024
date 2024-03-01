@@ -2,10 +2,11 @@ import cv2
 from ultralytics import YOLO
 
 # Load a pretrained model
-model = YOLO('best.pt')
-image = cv2.imread('11.jpg')
+model = YOLO('models/best.pt')
+
+image = cv2.imread('Original pictures\img_11.png')
 # Run Inference on the source
-resultss = model(source='11.jpg', show=True, conf=0.4, save=True) # generator of Results objects
+resultss = model(source='Original pictures\img_11.png', show=True, conf=0.4, save=True) # generator of Results objects
 print(resultss)
 # for result in results:
 #     # If result contains detections, you might need to access attributes or keys directly.

@@ -4,7 +4,7 @@ from ultralytics import YOLO
 image_path = 'Original pictures/img_13.png'
 image = cv2.imread(image_path)
 # Load a pretrained model
-model = YOLO('best.pt')
+model = YOLO('models/best.pt')
 threshold = 0.1
 
 # Run Inference on the source
@@ -20,4 +20,4 @@ for results in resultss:
                         cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 255, 0), 3, cv2.LINE_AA)
 
 # שמירת התמונה המעובדת
-cv2.imwrite('תמונות מעובדות/image_out17.jpg', image)
+cv2.imwrite('Original pictures/image_out17.jpg', image)

@@ -10,7 +10,7 @@ image = cv2.imread(image_path)
 # Resize the image to 640x640 pixels
 image_resized = cv2.resize(image, (640, 640))
 # הנתיב לקובץ המודל של YOLO
-model_path ='best.pt'
+model_path ='models/best.pt'
 # טעינת המודל
 model = YOLO(model_path)  # טעינת מודל מותאם אישית
 
