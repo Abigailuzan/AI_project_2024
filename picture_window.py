@@ -1,6 +1,9 @@
+import os.path
+
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
+from yolo_result import yolo_predict
 
 class PictureWindow(QWidget):
     def __init__(self, imagePath, parent=None):
@@ -21,8 +24,11 @@ class PictureWindow(QWidget):
         titleLabel.setStyleSheet(
             "color: #03045e; font-size: 100px; font-weight: bold;margin-top: 0px; padding-top: 0px;")  # Set color, font size, and weight
         layout.addWidget(titleLabel)  # Add the title label to the layout
+        file_path = os.getcwd()
+        matrix,imagePathNew=yolo_predict(imagePath)
         imageLabel = QLabel()
-        pixmap = QPixmap(imagePath)
+        imagePathNew=os.path.join(file_path,imagePathNew)
+        pixmap = QPixmap(imagePathNew)
         imageLabel.setPixmap(pixmap.scaled(imageLabel.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation))
         imageLabel.setAlignment(Qt.AlignCenter)
         layout.addWidget(imageLabel)
