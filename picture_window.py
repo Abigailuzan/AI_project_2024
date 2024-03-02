@@ -16,7 +16,7 @@ class PictureWindow(QWidget):
         layout.setSpacing(0)  # Remove space between the widgets in the layout
         #layout.setContentsMargins(0, 10, 0, 0)  # Left, Top, Right, Bottom margins
         # Title Label for "Calorie Count"
-        titleLabel = QLabel("Calorie Count")
+        titleLabel = QLabel("Calorie and Nutrition Value")
         titleLabel.setAlignment(Qt.AlignCenter)  # Align text to center
         titleLabel.setStyleSheet(
             "color: #03045e; font-size: 100px; font-weight: bold;margin-top: 0px; padding-top: 0px;")  # Set color, font size, and weight
