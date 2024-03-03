@@ -3,6 +3,7 @@ from PyQt5.QtCore import Qt
 import cv2
 import sys
 from picture_window import PictureWindow
+import os
 
 
 class MainWindow(QWidget):
@@ -14,7 +15,6 @@ class MainWindow(QWidget):
         self.showMaximized()
         # Set the background color of the window
         self.setStyleSheet("background-color: #90e0ef;")
-
 
     def initUI(self):
         self.layout = QVBoxLayout()  # Correctly initialized as self.layout
@@ -84,11 +84,14 @@ class MainWindow(QWidget):
             cv2.imshow('Capture - Press SPACE to save or ESC to exit', frame)
 
             k = cv2.waitKey(1)
-            if k%256 == 27: # ESC
+            if k % 256 == 27:  # ESC
                 print("Escape hit, closing...")
                 break
-            elif k%256 == 32: # SPACE
-                img_name = "opencv_frame.png"
+            elif k % 256 == 32:  # SPACE
+                # Check if the directory exists, create it if it doesn't
+                if not os.path.exists('imgTake'):
+                    os.makedirs('imgTake')
+                img_name = "imgTake/opencv_frame.png"
                 cv2.imwrite(img_name, frame)
                 print(f"{img_name} captured")
                 self.openPictureWindow(img_name)
@@ -96,6 +99,7 @@ class MainWindow(QWidget):
 
         cap.release()
         cv2.destroyAllWindows()
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

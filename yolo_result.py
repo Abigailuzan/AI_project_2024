@@ -6,7 +6,6 @@ model = YOLO('best.pt')
 threshold=0.4
 
 def yolo_predict(img_path):
-
     # Run Inference on the source
     resultss = model(source=img_path, show=False, conf=threshold, save=True) # generator of Results objects
     path=resultss[0].save_dir

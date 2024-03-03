@@ -45,6 +45,7 @@ class PictureWindow(QWidget):
         # Hide row headers
         self.tableWidget.verticalHeader().setVisible(False)
         self.tableWidget.setRowCount(len(matrix))  # for 3 rows
+        self.tableWidget.setStyleSheet("color: #03045e;")  # Set text color for all table content
         #num_columns = len(matrix[0]) if matrix else 0
         #self.tableWidget.setColumnCount(num_columns)  # for 3 columns
         # Fill the table with the matrix values
