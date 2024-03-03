@@ -10,7 +10,7 @@ model = YOLO('best.pt')
 threshold = 0.4
 
 # Run Inference on the source
-resultss = model(source=image_path, show=True, conf=threshold)  # generator of Results objects
+resultss = model(source=image_path, show=True, conf=threshold,save=True )  # generator of Results objects
 
 for results in resultss:
     # ציור מלבן סביב כל אובייקט שזוהה וכתיבת שם האובייקט
@@ -39,6 +39,7 @@ def calculate_resolution(image_path):
 for results in resultss:
     for result in results.boxes.data.tolist():
         x1, y1, x2, y2, score, class_id = result
+        
         class_id = int(class_id)  # int number instead of a float number for the index of the categori list
         calori_item_mili = calories_list.calories.get(class_id, None)
         # חישוב אורך ורוחב הריבוע שהמודל זיהה
