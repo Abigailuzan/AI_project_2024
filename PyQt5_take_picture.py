@@ -74,7 +74,7 @@ class MainWindow(QWidget):
         self.pictureWindow.show()
 
     def uploadPicture(self):
-        fname, _ = QFileDialog.getOpenFileName(self, 'Open file', '/home', "Image files (*.jpg *.gif *.png)")
+        fname, _ = QFileDialog.getOpenFileName(self, 'Open file', 'upLoad', "Image files (*.jpg *.gif *.png)")
         if fname:
             #pixmap = QPixmap(fname)
             #self.imageLabel.setPixmap(pixmap.scaled(self.imageLabel.width(), self.imageLabel.height()))

@@ -12,6 +12,13 @@ import calories_list
 # resultss = model(source=image_path, show=True, conf=threshold, save=True)  # generator of Results objects
 
 Total_calories = []
+# Function to sum Total_calories
+def sum_total_calories():
+    return sum(Total_calories)
+
+# Function to empty the Total_calories list
+def reset_total_calories():
+    Total_calories.clear()
 '''
 def calculate_resolution(image_path):
     imag = cv2.imread(image_path)
@@ -40,8 +47,9 @@ print(sum(Total_calories))
 '''
 
 
-def Calories_Calculator(image_path, x1, y1, x2, y2, class_id, results):
-    calori_item_mili = calories_list.calories.get(results.names.get(class_id))
+#def Calories_Calculator(image_path, x1, y1, x2, y2, class_id, results):
+def Calories_Calculator( x1, y1, x2, y2, name):
+    calori_item_mili = calories_list.calories.get(name)
     if calori_item_mili is None:
         print('no element found')
         return 0
