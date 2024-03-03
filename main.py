@@ -2,22 +2,21 @@ import cv2
 from ultralytics import YOLO
 import calories_list
 
-image_path = 'Original pictures/img_4.png'
-image = cv2.imread(image_path)
+# image_path = 'Original pictures/img_4.png'
+# image = cv2.imread(image_path)
 # Load a pretrained model
-model = YOLO('best.pt')
-threshold = 0.4
+# model = YOLO('best.pt')
+# threshold = 0.4
 
 # Run Inference on the source
-resultss = model(source=image_path, show=True, conf=threshold, save=True)  # generator of Results objects
+# resultss = model(source=image_path, show=True, conf=threshold, save=True)  # generator of Results objects
 
 Total_calories = []
-
+'''
 def calculate_resolution(image_path):
     imag = cv2.imread(image_path)
     resolution = imag.shape[:2]
     return resolution
-
 for results in resultss:
     for result in results.boxes.data.tolist():
         x1, y1, x2, y2, score, class_id = result
@@ -38,4 +37,21 @@ for results in resultss:
         print(total_calories)
         #return total_calories
 print(sum(Total_calories))
-#def Calories_Calculator(image_path, x1, y1, x2, y2, class_id):
+'''
+
+
+def Calories_Calculator(image_path, x1, y1, x2, y2, class_id, results):
+    calori_item_mili = calories_list.calories.get(results.names.get(class_id))
+    if calori_item_mili is None:
+        print('no element found')
+        return 0
+        # return 0
+    box_width = x2 - x1
+    box_height = y2 - y1
+    # image_height, image_width = calculate_resolution(image_path)
+    num_squares_width = box_width / 3.78
+    num_squares_height = box_height / 3.78
+    total_squares = num_squares_width * num_squares_height
+    total_calories = total_squares * calori_item_mili[0] * calori_item_mili[1]
+    Total_calories.append(total_calories)
+    return total_calories
