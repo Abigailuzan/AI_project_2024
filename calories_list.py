@@ -1,6 +1,46 @@
 # ערכים בריבוע של מילימטר על מילימטר צריך לעשות המרה לפיקסלים!!
 calories = {
-    'hot-dog': 0.0000058333,
+    'AW cola': [0.00042, 115],
+    'Beijing Beef': [0.0025, 50],
+    'Chow Mein': [0.0012, 300],
+    'Fried Rice': [0.0016, 300],
+    'Hashbrown': [0.0025, 50],
+    'Honey Walnut Shrimp': [0.0036000000000000003,50],
+    'Kung Pao Chicken': [0.0029,50],
+    'String Bean Chicken Breast': [0.0019,50],
+    'Super Greens': [0.00025,50],
+    'The Original Orange Chicken': [0.0032,50],
+    'White Steamed Rice': [0.0014,300],
+    'black pepper rice bowl': [0.002,300],
+    'burger': [0.0025,100],
+    'carrot_eggs': [0.001,50],
+    'cheese burger': [0.003,100],
+    'chicken waffle': [0.0027,300],
+    'chicken_nuggets': [0.003,50],
+    'chinese_cabbage': [0.00025,10],
+    'chinese_sausage': [0.004,150],
+    'crispy corn': [0.005,20],
+    'curry': [0.00175,300],
+    'french fries': [0.0031200000000000004,150],
+    'fried chicken': [0.0025,30],
+    'fried_chicken': [0.0025,30],
+    'fried_dumplings': [0.0032,30],
+    'fried_eggs': [0.002,20],
+    'mango chicken pocket': [0.0025 ,200],
+    'mozza burger': [0.0827,100],
+    'mung_bean_sprouts': [0.00003 ,50],
+    'nugget': [0.0012,30],
+    'perkedel': [0.06,30],
+    'rice': [0.0135,300],
+    'sprite': [0.0001 ,115],
+    'tostitos cheese dip sauce': [3,100],
+    'triangle_hash_brown': [2,30],
+    'water_spinach': [0.00019,10],
+}
+
+#ערכים קלוריים עבור המודל של תרצה
+'''
+   'hot-dog': 0.0000058333,
     'Apple': 0.000104,
     'Artichoke': 0.00000094,
     'Asparagus': 0.000004,
@@ -90,4 +130,4 @@ calories = {
     'Pho': 0.03,
     'Hu_tieu': 0.03,
     "Xoi": 0.02
-}
+'''
