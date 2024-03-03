@@ -1,12 +1,9 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QLabel, QFileDialog
-from PyQt5.QtGui import QPixmap, QImage
 from PyQt5.QtCore import Qt
-import sys
 import cv2
-from datetime import datetime
-import os
 import sys
 from picture_window import PictureWindow
+
 
 class MainWindow(QWidget):
 
@@ -76,10 +73,6 @@ class MainWindow(QWidget):
     def uploadPicture(self):
         fname, _ = QFileDialog.getOpenFileName(self, 'Open file', 'upLoad', "Image files (*.jpg *.gif *.png)")
         if fname:
-            #pixmap = QPixmap(fname)
-            #self.imageLabel.setPixmap(pixmap.scaled(self.imageLabel.width(), self.imageLabel.height()))
-            # Save the uploaded image
-            #self.saveImage(fname)
             self.openPictureWindow(fname)
 
     def capturePicture(self):
@@ -98,21 +91,11 @@ class MainWindow(QWidget):
                 img_name = "opencv_frame.png"
                 cv2.imwrite(img_name, frame)
                 print(f"{img_name} captured")
-                #self.imageLabel.setPixmap(QPixmap(img_name).scaled(self.imageLabel.width(), self.imageLabel.height()))
                 self.openPictureWindow(img_name)
                 break
 
         cap.release()
         cv2.destroyAllWindows()
-
-        def saveImage(self, imagePath):
-            # Generate a new filename based on current date and time
-            newFileName = "saved_image_{}.png".format(datetime.now().strftime("%Y%m%d_%H%M%S"))
-            # Copy the image to the new path
-            if os.path.isfile(imagePath):
-                pixmap = QPixmap(imagePath)
-                pixmap.save(newFileName)
-                print(f"Image saved as {newFileName}")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
